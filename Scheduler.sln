@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler.Data", "Scheduler.Data\Scheduler.Data.csproj", "{089424C1-6E42-479D-B965-921C8B89350E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler.DataAccess", "Scheduler.DataAccess\Scheduler.DataAccess.csproj", "{9372207D-57D8-4E14-BA0E-CC5987F3FFEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler.Twilio", "Scheduler.Twilio\Scheduler.Twilio.csproj", "{DFB0A477-3A1D-4FDF-8CFD-6F15441C068A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{089424C1-6E42-479D-B965-921C8B89350E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089424C1-6E42-479D-B965-921C8B89350E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089424C1-6E42-479D-B965-921C8B89350E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089424C1-6E42-479D-B965-921C8B89350E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9372207D-57D8-4E14-BA0E-CC5987F3FFEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9372207D-57D8-4E14-BA0E-CC5987F3FFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9372207D-57D8-4E14-BA0E-CC5987F3FFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9372207D-57D8-4E14-BA0E-CC5987F3FFEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB0A477-3A1D-4FDF-8CFD-6F15441C068A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB0A477-3A1D-4FDF-8CFD-6F15441C068A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB0A477-3A1D-4FDF-8CFD-6F15441C068A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB0A477-3A1D-4FDF-8CFD-6F15441C068A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
