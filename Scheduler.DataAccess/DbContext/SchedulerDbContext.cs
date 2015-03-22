@@ -12,15 +12,15 @@ namespace Scheduler.DataAccess
     public class SchedulerDbContext : DbContext
     {
         public SchedulerDbContext()
-            : base("Name=SchedulerDb") { 
+            : base("Name=SchedulerDatabase") { 
         }
 
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<AppointmentType> AppointmentTypes { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<ClientPhoneNumber> ClientPhoneNumbers { get; set; }
-        public DbSet<ClientTwilio> ClientTwilios { get; set; }
-        public DbSet<ClientType> ClientTypes { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<CompanyPhoneNumber> CompanyPhoneNumbers { get; set; }
+        public DbSet<CompanyTwilio> CompanyTwilios { get; set; }
+        public DbSet<CompanyType> CompanyTypes { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeSchedule> EmployeeSchedules { get; set; }
@@ -30,10 +30,10 @@ namespace Scheduler.DataAccess
             modelBuilder.Configurations.Add(new AddressConfiguration());
             modelBuilder.Configurations.Add(new AppointmentConfiguration());
             modelBuilder.Configurations.Add(new AppointmentTypeConfiguration());
-            modelBuilder.Configurations.Add(new ClientConfiguration());
-            modelBuilder.Configurations.Add(new ClientPhoneNumberConfiguration());
-            modelBuilder.Configurations.Add(new ClientTwilioConfiguration());
-            modelBuilder.Configurations.Add(new ClientTypeConfiguration());
+            modelBuilder.Configurations.Add(new CompanyConfiguration());
+            modelBuilder.Configurations.Add(new CompanyPhoneNumberConfiguration());
+            modelBuilder.Configurations.Add(new CompanyTwilioConfiguration());
+            modelBuilder.Configurations.Add(new CompanyTypeConfiguration());
             modelBuilder.Configurations.Add(new CustomerConfiguration());
             modelBuilder.Configurations.Add(new EmployeeConfiguration());
             modelBuilder.Configurations.Add(new EmployeeScheduleConfiguration());

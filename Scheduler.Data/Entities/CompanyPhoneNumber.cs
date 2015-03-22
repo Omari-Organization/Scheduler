@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Scheduler.Data
 {
-    public class ClientPhoneNumber
+    public class CompanyPhoneNumber
     {
-        public int ClientPhoneNumberId { get; set; }
+        public int CompanyPhoneNumberId { get; set; }
         public string PhoneNumber { get; set; }
         public bool IsCellPhone { get; set; }
-        public int ClientId { get; set; }
-        public virtual Client Client { get; set; }
+        public int CompanyId { get; set; }
+        public virtual Company Company { get; set; }
     }
 }

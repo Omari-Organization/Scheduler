@@ -7,12 +7,12 @@ using Scheduler.Data;
 
 namespace Scheduler.DataAccess.Configuration
 {
-    public class ClientTypeConfiguration : EntityTypeConfiguration<ClientType>
+    public class CompanyTypeConfiguration : EntityTypeConfiguration<CompanyType>
     {
-        public ClientTypeConfiguration()
+        public CompanyTypeConfiguration()
         {
-            HasKey(a => a.ClientTypeId);
-            Property(a => a._ClientType).IsRequired();
+            HasKey(a => a.CompanyTypeId);
+            Property(a => a.BusinessType).IsRequired();
         }
     }
 }

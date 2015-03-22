@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Scheduler.Data.Enums
 {
-    public enum ClientTypes
+    public enum BusinessTypes
     {
         A,
         B,

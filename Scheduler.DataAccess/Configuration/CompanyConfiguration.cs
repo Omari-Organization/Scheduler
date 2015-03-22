@@ -7,14 +7,13 @@ using Scheduler.Data;
 
 namespace Scheduler.DataAccess.Configuration
 {
-    public class ClientConfiguration : EntityTypeConfiguration<Client>
+    public class CompanyConfiguration : EntityTypeConfiguration<Company>
     {
-        public ClientConfiguration()
+        public CompanyConfiguration()
         {
-            HasKey(a => a.ClientId);
-            Property(a => a.IsActive).HasColumnType("bit");
+            HasKey(a => a.CompanyId);
+            Property(a => a.IsActive);
             Property(a => a.CreatedDate).IsRequired();
-            Property(a => a.TimeZone).HasColumnType("varchar").IsOptional();
             Property(a => a.Address.Street).HasColumnName("Street");
             Property(a => a.Address.City).HasColumnName("City");
             Property(a => a.Address.State).HasColumnName("State");
@@ -26,20 +25,20 @@ namespace Scheduler.DataAccess.Configuration
             Property(a => a.Name.Title).HasColumnName("Title");
             //One to many
             HasMany(a => a.Appointments)
-                .WithRequired(a => a.Client)
-                .HasForeignKey(a => a.ClientId);
+                .WithRequired(a => a.Company)
+                .HasForeignKey(a => a.CompanyId);
 
-            HasMany(a => a.ClientPhoneNumbers)
-                .WithRequired(a => a.Client)
-                .HasForeignKey(a => a.ClientId);
+            HasMany(a => a.CompanyPhoneNumbers)
+                .WithRequired(a => a.Company)
+                .HasForeignKey(a => a.CompanyId);
 
             HasMany(a => a.Employees)
-                .WithRequired(a => a.Client)
-                .HasForeignKey(a => a.ClientId);
+                .WithRequired(a => a.Company)
+                .HasForeignKey(a => a.CompanyId);
 
             //Many to many
             HasMany(a => a.Customers)
-                .WithMany(a => a.Clients);
+                .WithMany(a => a.Companies);
         }
     }
 }

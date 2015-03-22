@@ -7,12 +7,12 @@ using Scheduler.Data;
 
 namespace Scheduler.DataAccess.Configuration
 {
-    public class ClientPhoneNumberConfiguration : EntityTypeConfiguration<ClientPhoneNumber>
+    public class CompanyPhoneNumberConfiguration : EntityTypeConfiguration<CompanyPhoneNumber>
     {
-        public ClientPhoneNumberConfiguration()
+        public CompanyPhoneNumberConfiguration()
         {
-            HasKey(a => a.ClientPhoneNumberId);
-            Property(a => a.ClientId).IsRequired();
+            HasKey(a => a.CompanyPhoneNumberId);
+            Property(a => a.CompanyId).IsRequired();
             Property(a => a.PhoneNumber).HasMaxLength(12)
                                         .IsRequired();
             Property(a => a.IsCellPhone).IsRequired();

@@ -12,8 +12,8 @@ namespace Scheduler.DataAccess.Configuration
         public AppointmentTypeConfiguration()
         {
             HasKey(a => a.AppointmentTypeId);
-            Property(a => a.ClientId).IsRequired();
-            Property(a => a.Description).HasColumnType("varchar").IsRequired();
+            Property(a => a.CompanyId).IsRequired();
+            Property(a => a.Description).HasMaxLength(100).IsRequired();
         }
     }
   

@@ -16,7 +16,7 @@ namespace Scheduler.Data
         public Name Name { get; set; }
         public string EmailAddress { get; set; }
         public Address Address { get; set; }
-        public virtual ICollection<Client> Clients { get; set; }
+        public virtual ICollection<Company> Companies { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
     }
 }

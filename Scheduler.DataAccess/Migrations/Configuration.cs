@@ -7,6 +7,7 @@ namespace Scheduler.DataAccess.Migrations
     using Scheduler.DataAccess;
     using Scheduler.Data;
     using System.Collections.Generic;
+    using Scheduler.Data.Enums;
     internal sealed class Configuration : DbMigrationsConfiguration<Scheduler.DataAccess.SchedulerDbContext>
     {
         public Configuration()
@@ -27,33 +28,33 @@ namespace Scheduler.DataAccess.Migrations
             {
 
             };
-            var clientPhoneNumbers = new List<ClientPhoneNumber>()
+            var clientPhoneNumbers = new List<CompanyPhoneNumber>()
             {
 
             };
-            var clientTwilio = new ClientTwilio()
+            var clientTwilio = new CompanyTwilio()
             {
 
             };
-            var clientType = new ClientType()
+            var clientType = new CompanyType()
             {
 
             };
             var customers = new List<Customer>(){};
             var employees = new List<Employee>(){};
-            context.Clients.AddOrUpdate(
-                    new Client
+            context.Companies.AddOrUpdate(
+                    new Company
                     {
                         Address = address,
                         Appointments = appointments,
-                        ClientPhoneNumbers = clientPhoneNumbers,
-                        ClientTwilio = clientTwilio,
-                        ClientType = clientType,
+                        CompanyPhoneNumbers = clientPhoneNumbers,
+                        CompanyTwilio = clientTwilio,
+                        CompanyType = clientType,
                         CreatedDate = DateTime.Now,
                         Customers = customers,
                         Employees = employees,
                         Name = new Name(),
-                        TimeZone = "Central Standard Time",
+                        TimeZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time"),
                         IsActive = true
                     }
                 );

@@ -13,8 +13,8 @@ namespace Scheduler.Data
         public DateTime DateTo { get; set; }
         public int AppointmentTypeId { get; set; }
         public virtual AppointmentType AppointmentType { get; set; }
-        public int ClientId { get; set; }   
-        public virtual Client Client { get; set; }
+        public int CompanyId { get; set; }   
+        public virtual Company Company { get; set; }
         public int EmployeeId { get; set; }
         public virtual Employee Employee {get; set;}
         public int CustomerId { get; set; }

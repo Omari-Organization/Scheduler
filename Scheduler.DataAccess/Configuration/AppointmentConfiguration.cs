@@ -12,8 +12,8 @@ namespace Scheduler.DataAccess.Configuration
         public AppointmentConfiguration()
         {
             HasKey(a => a.AppointmentId);
-            Property(a => a.Description).IsRequired();
-            Property(a => a.ClientId);
+            Property(a => a.Description).HasMaxLength(100).IsRequired();
+            Property(a => a.CompanyId);
             Property(a => a.AppointmentTypeId).IsRequired();
             Property(a => a.CancellationDate).IsOptional();
             Property(a => a.CustomerId).IsRequired();

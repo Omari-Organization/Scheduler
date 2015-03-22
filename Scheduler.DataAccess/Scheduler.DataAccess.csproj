@@ -53,10 +53,10 @@
     <Compile Include="Configuration\AppointmentConfiguration.cs" />
     <Compile Include="Configuration\AddressConfiguration.cs" />
     <Compile Include="Configuration\AppointmentTypeConfiguration.cs" />
-    <Compile Include="Configuration\ClientConfiguration.cs" />
-    <Compile Include="Configuration\ClientPhoneNumberConfiguration.cs" />
-    <Compile Include="Configuration\ClientTwilioConfiguration.cs" />
-    <Compile Include="Configuration\ClientTypeConfiguration.cs" />
+    <Compile Include="Configuration\CompanyConfiguration.cs" />
+    <Compile Include="Configuration\CompanyPhoneNumberConfiguration.cs" />
+    <Compile Include="Configuration\CompanyTwilioConfiguration.cs" />
+    <Compile Include="Configuration\CompanyTypeConfiguration.cs" />
     <Compile Include="Configuration\CustomerConfiguration.cs" />
     <Compile Include="Configuration\EmployeeConfiguration.cs" />
     <Compile Include="Configuration\EmployeeScheduleConfiguration.cs" />
@@ -72,6 +72,10 @@
     <Compile Include="Migrations\201503211756137_3.Designer.cs">
       <DependentUpon>201503211756137_3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503221957175_4.cs" />
+    <Compile Include="Migrations\201503221957175_4.Designer.cs">
+      <DependentUpon>201503221957175_4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,9 +83,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503211756137_3.resx">
       <DependentUpon>201503211756137_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503221957175_4.resx">
+      <DependentUpon>201503221957175_4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

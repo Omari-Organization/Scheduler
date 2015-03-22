@@ -52,14 +52,14 @@
     <Compile Include="ComplexTypes\Address.cs" />
     <Compile Include="Entities\Appointment.cs" />
     <Compile Include="Entities\AppointmentType.cs" />
-    <Compile Include="Entities\Client.cs" />
-    <Compile Include="Entities\ClientPhoneNumber.cs" />
-    <Compile Include="Entities\ClientTwilio.cs" />
-    <Compile Include="Entities\ClientType.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\CompanyPhoneNumber.cs" />
+    <Compile Include="Entities\CompanyTwilio.cs" />
+    <Compile Include="Entities\CompanyType.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Employee.cs" />
     <Compile Include="Entities\EmployeeSchedule.cs" />
-    <Compile Include="Enums\ClientTypes.cs" />
+    <Compile Include="Enums\BusinessTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

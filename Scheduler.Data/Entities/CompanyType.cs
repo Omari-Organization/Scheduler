@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Scheduler.Data
 {
-    public class ClientType
+    public class CompanyType
     {
-        public int ClientTypeId { get; set; }
-        public ClientTypes _ClientType { get; set; }
+        public int CompanyTypeId { get; set; }
+        public BusinessTypes BusinessType { get; set; }
     }
 }
