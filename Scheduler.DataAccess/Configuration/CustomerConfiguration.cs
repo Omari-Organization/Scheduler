@@ -21,7 +21,6 @@ namespace Scheduler.DataAccess.Configuration
             Property(a => a.Name.LastName).HasColumnName("LastName");
             Property(a => a.Name.MiddleName).HasColumnName("MiddleName");
             Property(a => a.Name.Title).HasColumnName("Title");
-            //Property(a => a.ClientType).IsRequired();
         }
     }
 }

@@ -13,7 +13,6 @@ namespace Scheduler.DataAccess
     {
         public SchedulerDbContext()
             : base("Name=SchedulerDb") { 
-        
         }
 
         public DbSet<Appointment> Appointments { get; set; }
@@ -25,7 +24,6 @@ namespace Scheduler.DataAccess
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeSchedule> EmployeeSchedules { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
