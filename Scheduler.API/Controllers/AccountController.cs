@@ -44,8 +44,8 @@ namespace Scheduler.API.Controllers
                 return BadRequest(ModelState);
             }
 
-            IdentityResult result = await _identityRepo.RegisterUser(userModel);
-
+            IdentityResult result = await _identityRepo.RegisterUser(userModel.UserName,userModel.Password);
+            
             IHttpActionResult errorResult = GetErrorResult(result);
 
             if (errorResult != null)
@@ -53,6 +53,7 @@ namespace Scheduler.API.Controllers
                 return errorResult;
             }
 
+            //identity.AddClaim(new Claim(ClaimTypes.Sid,))
             return Ok();
         }
 
@@ -127,7 +128,7 @@ namespace Scheduler.API.Controllers
                 return BadRequest("Invalid Provider or External Access Token");
             }
 
-            IdentityUser user = await _repo.FindAsync(new UserLoginInfo(model.Provider, verifiedAccessToken.user_id));
+            IdentityUser user = await _identityRepo.FindAsync(new UserLoginInfo(model.Provider, verifiedAccessToken.user_id));
 
             bool hasRegistered = user != null;
 
@@ -138,7 +139,7 @@ namespace Scheduler.API.Controllers
 
             user = new IdentityUser() { UserName = model.UserName };
 
-            IdentityResult result = await _repo.CreateAsync(user);
+            IdentityResult result = await _identityRepo.CreateAsync(user);
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -150,12 +151,12 @@ namespace Scheduler.API.Controllers
                 Login = new UserLoginInfo(model.Provider, verifiedAccessToken.user_id)
             };
 
-            result = await _repo.AddLoginAsync(user.Id, info.Login);
+            result = await _identityRepo.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
-
+            //user.Claims.
             //generate access token response
             var accessTokenResponse = GenerateLocalAccessTokenResponse(model.UserName);
 
@@ -179,7 +180,7 @@ namespace Scheduler.API.Controllers
                 return BadRequest("Invalid Provider or External Access Token");
             }
 
-            IdentityUser user = await _repo.FindAsync(new UserLoginInfo(provider, verifiedAccessToken.user_id));
+            IdentityUser user = await _identityRepo.FindAsync(new UserLoginInfo(provider, verifiedAccessToken.user_id));
 
             bool hasRegistered = user != null;
 
@@ -199,7 +200,7 @@ namespace Scheduler.API.Controllers
         {
             if (disposing)
             {
-                _repo.Dispose();
+                _identityRepo.Dispose();
             }
 
             base.Dispose(disposing);
@@ -262,7 +263,7 @@ namespace Scheduler.API.Controllers
                 return "client_Id is required";
             }
 
-            var client = _repo.FindClient(clientId);
+            var client = _identityRepo.FindClient(clientId);
 
             if (client == null)
             {
@@ -363,7 +364,7 @@ namespace Scheduler.API.Controllers
 
             identity.AddClaim(new Claim(ClaimTypes.Name, userName));
             identity.AddClaim(new Claim("role", "user"));
-
+            
             var props = new AuthenticationProperties()
             {
                 IssuedUtc = DateTime.UtcNow,

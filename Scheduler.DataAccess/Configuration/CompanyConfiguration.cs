@@ -28,9 +28,8 @@ namespace Scheduler.DataAccess.Configuration
                 .WithRequired(a => a.Company)
                 .HasForeignKey(a => a.CompanyId);
 
-            HasMany(a => a.CompanyPhoneNumbers)
-                .WithRequired(a => a.Company)
-                .HasForeignKey(a => a.CompanyId);
+            HasMany(a => a.CompanyPhoneNumbers);
+               // .HasForeignKey(a => a.CompanyId);
 
             HasMany(a => a.Employees)
                 .WithRequired(a => a.Company)

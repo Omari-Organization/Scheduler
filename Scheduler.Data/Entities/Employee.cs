@@ -7,6 +7,12 @@ namespace Scheduler.Data
 {
     public class Employee
     {
+        public Employee()
+        {
+            EmployeeSchedules = new List<EmployeeSchedule>();
+            Appointments = new List<Appointment>();
+        }
+
         public int EmployeeId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

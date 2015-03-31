@@ -31,7 +31,6 @@ namespace Scheduler.API
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseWebApi(config);
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<IdentityContext, AngularJSAuthentication.API.Migrations.Configuration>());
-
         }
 
         public void ConfigureOAuth(IAppBuilder app)
@@ -42,7 +41,6 @@ namespace Scheduler.API
 
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
-
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),

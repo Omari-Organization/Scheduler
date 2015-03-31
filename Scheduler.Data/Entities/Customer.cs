@@ -11,6 +11,8 @@ namespace Scheduler.Data
         {
             Address = new Address();
             Name = new Name();
+            Companies = new List<Company>();
+            Appointments = new List<Appointment>();
         }
         public int CustomerId { get; set; }
         public Name Name { get; set; }

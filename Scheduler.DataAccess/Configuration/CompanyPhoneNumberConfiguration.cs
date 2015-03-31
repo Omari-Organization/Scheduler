@@ -12,7 +12,7 @@ namespace Scheduler.DataAccess.Configuration
         public CompanyPhoneNumberConfiguration()
         {
             HasKey(a => a.CompanyPhoneNumberId);
-            Property(a => a.CompanyId).IsRequired();
+            //Property(a => a.CompanyId).IsRequired();
             Property(a => a.PhoneNumber).HasMaxLength(12)
                                         .IsRequired();
             Property(a => a.IsCellPhone).IsRequired();
